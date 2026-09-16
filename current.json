@@ -1,0 +1,1054 @@
+{
+  "schema": "tokenmaxxing-public/v1",
+  "updated_at": "2026-09-16T02:08:55.233085Z",
+  "window": {
+    "start": "2026-09-15T23:00:00Z",
+    "end": "2026-09-16T02:08:54.724466Z",
+    "label": "2026-09-15 23:00 to 2026-09-16 02:08 UTC"
+  },
+  "health": {
+    "collector_up": 1.0,
+    "metrics_up": 1.0,
+    "received_spans_1h": 39.327499754203124,
+    "metric_points_exported_1h": 4390.5624084564215,
+    "failed_exports_1h": 0.0,
+    "active_work": 0.0,
+    "alerts": 3,
+    "alerts_by_severity": {
+      "info": 1,
+      "warning": 1,
+      "error": 1
+    },
+    "alerts_detail": [
+      {
+        "source": "prometheus",
+        "code": "CodingAgentQuotaSourceMissing",
+        "severity": "info"
+      },
+      {
+        "source": "prometheus",
+        "code": "CodingAgentAttributionCoverageLow",
+        "severity": "warning"
+      },
+      {
+        "source": "exporter",
+        "code": "retained_totals_unavailable",
+        "severity": "error"
+      }
+    ],
+    "alerts_note": "Counts firing Prometheus rules plus the control-plane exporter's own alert series. Severity is the worst reported.",
+    "alerts_worst_severity": "error",
+    "pipeline_note": "Spans are received once and converted locally into Prometheus metrics; no trace backend is shipped to, so there is no export queue to report."
+  },
+  "usage": {
+    "known_total": null,
+    "providers": [
+      {
+        "id": "chatgpt-codex",
+        "label": "Codex",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "opencode-go",
+        "label": "OpenCode Go",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter",
+        "tokens": null,
+        "share": null,
+        "source": null
+      },
+      {
+        "id": "other",
+        "label": "Other measured",
+        "tokens": null,
+        "share": null,
+        "source": null
+      }
+    ]
+  },
+  "activity": {
+    "active": null,
+    "complete": null,
+    "attention": null
+  },
+  "activity_rate": {
+    "codex": 0.011109095016089672
+  },
+  "economics": {
+    "retained_total": null,
+    "spend_24h": 98901.0,
+    "cash_total_usd": 89.514,
+    "cash_by_agent": {
+      "omp": 18.3678,
+      "opencode": 71.1462
+    },
+    "cash_basis": "metered",
+    "notional_total_usd": 3.8376330000000003,
+    "notional_by_agent": {
+      "hermes": 3.8376330000000003
+    },
+    "metered_by_authority": {
+      "openrouter": 79.33506299999999,
+      "opencode-go": 10.178937
+    },
+    "cost_total_usd": 97.614829,
+    "cost_by_basis": {
+      "metered": 89.514,
+      "notional": 3.8376330000000003,
+      "unknown": 4.263196
+    },
+    "cost_by_authority": [
+      {
+        "authority": "openrouter",
+        "label": "OpenRouter (prepaid credits)",
+        "metered": 79.33506299999999,
+        "notional": 3.8376330000000003,
+        "unknown": null,
+        "total": 83.17269599999999
+      },
+      {
+        "authority": "opencode-go",
+        "label": "OpenCode Go (usage-billed)",
+        "metered": 10.178937,
+        "notional": null,
+        "unknown": null,
+        "total": 10.178937
+      },
+      {
+        "authority": "unknown",
+        "label": "Unknown who bills",
+        "metered": null,
+        "notional": null,
+        "unknown": 4.263196,
+        "total": 4.263196
+      }
+    ],
+    "cost_authority_labels": {
+      "codex-plan": "Codex plan (included in subscription)",
+      "openrouter": "OpenRouter (prepaid credits)",
+      "opencode-go": "OpenCode Go (usage-billed)",
+      "openai-api": "OpenAI API (pay-per-token)",
+      "unknown": "Unknown who bills"
+    },
+    "openrouter_account": {
+      "scope": "account",
+      "authority": "openrouter_credits_api",
+      "credits_total_usd": 585.0,
+      "credits_used_usd": 574.01617817,
+      "credits_balance_usd": 10.98382183,
+      "key_lifetime_usd": 418.84002364,
+      "key_monthly_usd": 277.98213131,
+      "attributed_session_usd": 83.172696,
+      "unattributed_usd": 490.84348217,
+      "note": "Account, key and session attribution are different scopes and are never summed. The unattributed gap is routed traffic that recorded no native cost in its session store."
+    },
+    "allowance": {
+      "openrouter": {
+        "lifetime_credits": 98.122424
+      }
+    },
+    "runway": null,
+    "allowance_note": "Codex-emitted allowance and reset data is measured. Exact credit balance is withheld from the public packet; balance increases are not labelled as automatic refills.",
+    "cost_basis_note": "cash_total_usd is metered money only. notional_total_usd is subscription-included usage valued at list prices and is not cash. cost_total_usd is the sum of every measured basis and equals the Grafana retained total; the three bases always add up to it.",
+    "cost_authority_note": "Every measured dollar is attributed to a named bill. cost_by_authority rows sum to cost_total_usd."
+  },
+  "cache_efficiency": {
+    "omp": {
+      "prompt_per_completion": 226.27036545578457,
+      "cache_ratio": null,
+      "cache_read": null,
+      "cache_write": null,
+      "uncached_prompt": null,
+      "note": "direct harness cache counters where available"
+    },
+    "claude-code": {
+      "prompt_per_completion": 252.5759966272367,
+      "cache_ratio": null,
+      "cache_read": null,
+      "cache_write": null,
+      "uncached_prompt": null,
+      "note": "direct harness cache counters where available"
+    },
+    "opencode": {
+      "prompt_per_completion": 237.92693207902164,
+      "cache_ratio": 0.9609794684003811,
+      "cache_read": 303809249.0,
+      "cache_write": 8859090.0,
+      "uncached_prompt": 3477072.0,
+      "note": "direct harness cache counters where available"
+    },
+    "hermes": {
+      "prompt_per_completion": 379.0349191716327,
+      "cache_ratio": 0.9155201288736009,
+      "cache_read": 52699296.0,
+      "cache_write": 103723.0,
+      "uncached_prompt": 4759119.0,
+      "note": "direct harness cache counters where available"
+    },
+    "codex": {
+      "prompt_per_completion": 549.1643412634023,
+      "cache_ratio": 0.9450782421327312,
+      "cache_read": 11405973980.0,
+      "cache_write": null,
+      "uncached_prompt": 662844091.0,
+      "note": "direct harness cache counters where available"
+    }
+  },
+  "source_harness": [
+    {
+      "provider": "openrouter",
+      "agent": "codex",
+      "tokens": 12090791177.0
+    },
+    {
+      "provider": "openrouter",
+      "agent": "omp",
+      "tokens": 723976340.0
+    },
+    {
+      "provider": "opencode-go",
+      "agent": "opencode",
+      "tokens": 214613747.0
+    },
+    {
+      "provider": "openrouter",
+      "agent": "opencode",
+      "tokens": 102510328.0
+    },
+    {
+      "provider": "openrouter",
+      "agent": "hermes",
+      "tokens": 57714003.0
+    },
+    {
+      "provider": "opencode",
+      "agent": "opencode",
+      "tokens": 350086.0
+    }
+  ],
+  "attribution": {
+    "labelled_tokens": 1130440821.0,
+    "all_tokens": 13221231998.0,
+    "share": 0.08550192759426685,
+    "window_age_seconds": 217.294,
+    "parent_worker_edges": 151.0
+  },
+  "latency_reliability": {
+    "ttft_p95_ms": null,
+    "request_failure_rate_5m": null
+  },
+  "session_usage": {
+    "agents": [
+      {
+        "agent": "codex",
+        "prompt": 12068814487.0,
+        "completion": 21976690.0,
+        "sessions": 711.0,
+        "cache_read": 11405973980.0,
+        "uncached_prompt": 662844091.0,
+        "reasoning": 7760408.0,
+        "total": 12090791177.0
+      },
+      {
+        "agent": "omp",
+        "prompt": 720790811.0,
+        "completion": 3185529.0,
+        "sessions": 102.0,
+        "total": 723976340.0
+      },
+      {
+        "agent": "opencode",
+        "prompt": 316145411.0,
+        "completion": 1328750.0,
+        "sessions": 115.0,
+        "cache_write": 8859090.0,
+        "uncached_prompt": 3477072.0,
+        "total": 317474161.0,
+        "cache_read": 303809249.0,
+        "reasoning": 494050.0
+      },
+      {
+        "agent": "hermes",
+        "prompt": 57562138.0,
+        "completion": 151865.0,
+        "sessions": 49.0,
+        "uncached_prompt": 4759119.0,
+        "total": 57714003.0,
+        "cache_read": 52699296.0,
+        "reasoning": 24560.0,
+        "cache_write": 103723.0
+      },
+      {
+        "agent": "claude-code",
+        "prompt": 31152976.0,
+        "completion": 123341.0,
+        "sessions": 21.0,
+        "total": 31276317.0
+      }
+    ],
+    "models_24h": [
+      {
+        "model": "z-ai/glm-5.3-flash",
+        "prompt": 98454.0,
+        "completion": 447.0
+      }
+    ],
+    "projects_24h": [
+      {
+        "project": "p-66c07394",
+        "prompt": 563448495.0,
+        "completion": 1619739.0
+      },
+      {
+        "project": "p-176660ac",
+        "prompt": 193203.0,
+        "completion": 407.0
+      },
+      {
+        "project": "p-cf10d3eb",
+        "prompt": 67429.0,
+        "completion": 17.0
+      },
+      {
+        "project": "p-02a99d38",
+        "prompt": 31025.0,
+        "completion": 430.0
+      }
+    ],
+    "unknown_model_tokens_24h": 565261844.0
+  },
+  "retained_totals": {
+    "providers": [
+      {
+        "provider": "chatgpt-codex",
+        "label": "Codex",
+        "tokens": null,
+        "known": 0
+      },
+      {
+        "provider": "opencode-go",
+        "label": "OpenCode Go",
+        "tokens": null,
+        "known": 0
+      },
+      {
+        "provider": "openrouter",
+        "label": "OpenRouter",
+        "tokens": null,
+        "known": 0
+      }
+    ],
+    "known_total": null
+  },
+  "token_scopes": {
+    "headline_scope": "provider_retained",
+    "scopes": [
+      {
+        "id": "provider_retained",
+        "label": "Provider-recorded lifetime tokens",
+        "tokens": null,
+        "source": "Codex thread records and the OpenCode session table",
+        "basis": "One cumulative figure per session, as kept by the client that ran it."
+      },
+      {
+        "id": "session_measured",
+        "label": "Harness-measured tokens",
+        "tokens": 13221231998.0,
+        "source": "Local session event streams, parsed per harness",
+        "basis": "Prompt plus completion only, attributed to the harness that ran the work."
+      }
+    ],
+    "note": "These are two different measurements, not two answers to one question, so they are not expected to be equal. The provider record is the headline because it is the only figure that covers sessions whose local event files are no longer present. The harness figure is narrower: it only sees events still on disk, and it splits prompt from completion. Read the headline for lifetime scale and the harness breakdown for who ran the work."
+  },
+  "coverage": {
+    "provider_rows": 4,
+    "provider_rows_known": 2,
+    "sources_available": {
+      "operator_snapshot": 1.0,
+      "opencode_sqlite": 1.0,
+      "ntm": 0.0,
+      "beads": 0.0,
+      "bvr": 0.0,
+      "agent_mail": 0.0
+    },
+    "window_age_seconds": 217.294,
+    "quota_source_age_seconds": 6868.374
+  },
+  "history": [
+    {
+      "at": "2026-09-11T12:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 178.14206031155786,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T13:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 0.029634458948865745,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T14:00:00Z",
+      "chatgpt_codex": 458653267,
+      "opencode_go": 0,
+      "known_total": 458653267,
+      "codex_activity": 0.025928998992473182
+    },
+    {
+      "at": "2026-09-11T15:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 12.295203389328355,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T16:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 48.76441027578112,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T17:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 27.164088430535802,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T18:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 69.49083503054989,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T19:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 8.75925925925926,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T20:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 15.745756055632537,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T21:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 5.039639486186352,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T22:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 21.359050642994493,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-11T23:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 6.377966754570507,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T00:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 0.04443868387431259,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T04:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 23.647422267989302,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T05:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 0.025936012152874267,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T06:00:00Z",
+      "chatgpt_codex": 219472890,
+      "opencode_go": 0,
+      "known_total": 219472890,
+      "codex_activity": 0.018526340751280172
+    },
+    {
+      "at": "2026-09-12T07:00:00Z",
+      "chatgpt_codex": 219472890,
+      "opencode_go": 0,
+      "known_total": 219472890,
+      "codex_activity": 0.01850775660079139
+    },
+    {
+      "at": "2026-09-12T08:00:00Z",
+      "chatgpt_codex": 219472890,
+      "opencode_go": 0,
+      "known_total": 219472890,
+      "codex_activity": 0.018520096156339247
+    },
+    {
+      "at": "2026-09-12T09:00:00Z",
+      "chatgpt_codex": 219472890,
+      "opencode_go": 0,
+      "known_total": 219472890,
+      "codex_activity": 0.018520096156339243
+    },
+    {
+      "at": "2026-09-12T10:00:00Z",
+      "chatgpt_codex": 219472890,
+      "opencode_go": 0,
+      "known_total": 219472890,
+      "codex_activity": 0.01852654668875031
+    },
+    {
+      "at": "2026-09-12T11:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 270.15113350125944,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T12:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 0.11852993251201968,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T13:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 108.28709636795983,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T14:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 169.24210885008853,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-12T15:00:00Z",
+      "chatgpt_codex": 11180574148.0,
+      "opencode_go": 214392064.0,
+      "known_total": 11713357498.0,
+      "codex_activity": 88.60698544390533,
+      "openrouter": 318391286.0
+    },
+    {
+      "at": "2026-09-13T15:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 23711959378.0,
+      "codex_activity": 483.6446607623726,
+      "openrouter": 6881511327.0
+    },
+    {
+      "at": "2026-09-13T16:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 23891165999.0,
+      "codex_activity": 180.4021198508253,
+      "openrouter": 7060717948.0
+    },
+    {
+      "at": "2026-09-13T17:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24008788222.0,
+      "codex_activity": 171.35057247737686,
+      "openrouter": 7178340171.0
+    },
+    {
+      "at": "2026-09-13T18:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24140173744.0,
+      "codex_activity": 260.6918157478624,
+      "openrouter": 7309725693.0
+    },
+    {
+      "at": "2026-09-13T19:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24224416587.0,
+      "codex_activity": 4.785486493594041,
+      "openrouter": 7393968536.0
+    },
+    {
+      "at": "2026-09-13T20:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24263091794.0,
+      "codex_activity": 59.06347600893621,
+      "openrouter": 7432643743.0
+    },
+    {
+      "at": "2026-09-13T21:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24334931335.0,
+      "codex_activity": 49.62001688813831,
+      "openrouter": 7504483284.0
+    },
+    {
+      "at": "2026-09-13T22:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24408225446.0,
+      "codex_activity": 18.909998777610266,
+      "openrouter": 7577777395.0
+    },
+    {
+      "at": "2026-09-13T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018524007113218728
+    },
+    {
+      "at": "2026-09-14T00:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24455298303.0,
+      "codex_activity": 0.018519615977243095,
+      "openrouter": 7624850252.0
+    },
+    {
+      "at": "2026-09-14T01:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24455298303.0,
+      "codex_activity": 0.018507277061340522,
+      "openrouter": 7624850252.0
+    },
+    {
+      "at": "2026-09-14T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018520850773801147
+    },
+    {
+      "at": "2026-09-14T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018523320860963952
+    },
+    {
+      "at": "2026-09-14T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018531147152133304
+    },
+    {
+      "at": "2026-09-14T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.01851893005029741
+    },
+    {
+      "at": "2026-09-14T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.01850624956047657
+    },
+    {
+      "at": "2026-09-14T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.01850946944456784
+    },
+    {
+      "at": "2026-09-14T08:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226627020.0,
+      "known_total": 24459674422.0,
+      "codex_activity": 35.28701488225316,
+      "openrouter": 7629226371.0
+    },
+    {
+      "at": "2026-09-14T09:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24471947026.0,
+      "opencode_activity": 0.00740776407752966,
+      "codex_activity": 6.726249782396931,
+      "openrouter": 7641277292.0
+    },
+    {
+      "at": "2026-09-14T10:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24506422486.0,
+      "codex_activity": 42.69575524112898,
+      "openrouter": 7675752752.0
+    },
+    {
+      "at": "2026-09-14T11:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24566565791.0,
+      "codex_activity": 131.20526935027314,
+      "openrouter": 7735896057.0
+    },
+    {
+      "at": "2026-09-14T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 221683,
+      "known_total": 221683,
+      "codex_activity": 0.018515501177585873
+    },
+    {
+      "at": "2026-09-14T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 221683,
+      "known_total": 221683,
+      "codex_activity": 0.01851036024863116
+    },
+    {
+      "at": "2026-09-14T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 221683,
+      "known_total": 221683,
+      "codex_activity": 0.018519067231621677
+    },
+    {
+      "at": "2026-09-14T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 221683,
+      "known_total": 221683,
+      "codex_activity": 0.018520782169672588
+    },
+    {
+      "at": "2026-09-14T16:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24614604980.0,
+      "codex_activity": 0.018520096156339247,
+      "openrouter": 7783935246.0
+    },
+    {
+      "at": "2026-09-14T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 221683,
+      "known_total": 221683,
+      "codex_activity": 0.018520644962940192
+    },
+    {
+      "at": "2026-09-14T18:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24619613398.0,
+      "codex_activity": 29.499540863177227,
+      "openrouter": 7788943664.0
+    },
+    {
+      "at": "2026-09-14T19:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24622974851.0,
+      "codex_activity": 17.210728650474433,
+      "openrouter": 7792305117.0
+    },
+    {
+      "at": "2026-09-14T20:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24632680407.0,
+      "codex_activity": 47.579373014286034,
+      "openrouter": 7802010673.0
+    },
+    {
+      "at": "2026-09-14T21:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24649321029.0,
+      "codex_activity": 19.32098834001681,
+      "openrouter": 7818651295.0
+    },
+    {
+      "at": "2026-09-14T22:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24668375638.0,
+      "codex_activity": 147.99602983549002,
+      "openrouter": 7837705904.0
+    },
+    {
+      "at": "2026-09-14T23:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24915220586.0,
+      "codex_activity": 9.008508447328747,
+      "openrouter": 8084550852.0
+    },
+    {
+      "at": "2026-09-15T00:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24922418580.0,
+      "codex_activity": 0.5852567165616538,
+      "openrouter": 8091748846.0
+    },
+    {
+      "at": "2026-09-15T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.0259393759727266
+    },
+    {
+      "at": "2026-09-15T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.011113539625325535
+    },
+    {
+      "at": "2026-09-15T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.02592189363136104
+    },
+    {
+      "at": "2026-09-15T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018520096156339247
+    },
+    {
+      "at": "2026-09-15T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.011115804450768103
+    },
+    {
+      "at": "2026-09-15T06:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24940610303.0,
+      "codex_activity": 0.03703223656192716,
+      "openrouter": 8109940569.0
+    },
+    {
+      "at": "2026-09-15T07:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24940610303.0,
+      "codex_activity": 0.03703786010059482,
+      "openrouter": 8109940569.0
+    },
+    {
+      "at": "2026-09-15T08:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24940610303.0,
+      "openrouter": 8109940569.0
+    },
+    {
+      "at": "2026-09-15T09:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24940610303.0,
+      "openrouter": 8109940569.0
+    },
+    {
+      "at": "2026-09-15T10:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 24962968263.0,
+      "codex_activity": 25.818110449076627,
+      "openrouter": 8132298529.0
+    },
+    {
+      "at": "2026-09-15T11:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25029477375.0,
+      "codex_activity": 23.215066270549798,
+      "openrouter": 8198807641.0
+    },
+    {
+      "at": "2026-09-15T12:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25083266966.0,
+      "codex_activity": 8.212327752259593,
+      "openrouter": 8252597232.0
+    },
+    {
+      "at": "2026-09-15T13:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25101763992.0,
+      "codex_activity": 0.19995704626413585,
+      "openrouter": 8271094258.0
+    },
+    {
+      "at": "2026-09-15T14:00:00Z",
+      "chatgpt_codex": 16603821031.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25121237590.0,
+      "codex_activity": 23.6582718756598,
+      "openrouter": 8290567856.0
+    },
+    {
+      "at": "2026-09-15T15:00:00Z",
+      "chatgpt_codex": 16608704782.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25162701516.0,
+      "codex_activity": 4.081632653061225,
+      "openrouter": 8327148031.0
+    },
+    {
+      "at": "2026-09-15T16:00:00Z",
+      "chatgpt_codex": 16610029774.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25168911163.0,
+      "codex_activity": 52.11409010584344,
+      "openrouter": 8332032686.0
+    },
+    {
+      "at": "2026-09-15T17:00:00Z",
+      "chatgpt_codex": 6386347,
+      "opencode_go": 0,
+      "known_total": 6386347
+    },
+    {
+      "at": "2026-09-15T18:00:00Z",
+      "chatgpt_codex": 16611179839.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25172801519.0,
+      "codex_activity": 186.87319623148997,
+      "openrouter": 8334772977.0
+    },
+    {
+      "at": "2026-09-15T19:00:00Z",
+      "chatgpt_codex": 16615320276.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25243531164.0,
+      "codex_activity": 722.417016865061,
+      "openrouter": 8401362185.0
+    },
+    {
+      "at": "2026-09-15T20:00:00Z",
+      "chatgpt_codex": 16615320276.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25375709910.0,
+      "codex_activity": 259.2341491245619,
+      "openrouter": 8533540931.0
+    },
+    {
+      "at": "2026-09-15T21:00:00Z",
+      "chatgpt_codex": 16615320276.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25409319502.0,
+      "codex_activity": 253.9372120242381,
+      "openrouter": 8567150523.0
+    },
+    {
+      "at": "2026-09-15T22:00:00Z",
+      "chatgpt_codex": 16615320276.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25462637216.0,
+      "codex_activity": 40.234525467421264,
+      "openrouter": 8620468237.0
+    },
+    {
+      "at": "2026-09-15T23:00:00Z",
+      "chatgpt_codex": 16615320276.0,
+      "opencode_go": 226848703.0,
+      "known_total": 25521922536.0,
+      "codex_activity": 5.1851659808667385,
+      "openrouter": 8679753557.0
+    },
+    {
+      "at": "2026-09-16T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.011111646116294487
+    },
+    {
+      "at": "2026-09-16T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "codex_activity": 0.018507208557733232
+    },
+    {
+      "at": "2026-09-16T02:00:00Z",
+      "known_total": null,
+      "codex_activity": 0.011109095016089672,
+      "opencode_activity": null,
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "openrouter": null,
+      "other": null,
+      "agents": {
+        "omp": {
+          "prompt": 720790811.0
+        },
+        "claude-code": {
+          "prompt": 31152976.0
+        },
+        "opencode": {
+          "prompt": 316145411.0
+        },
+        "hermes": {
+          "prompt": 57562138.0
+        },
+        "codex": {
+          "prompt": 12068814487.0
+        }
+      },
+      "retained": {
+        "chatgpt-codex": null,
+        "opencode-go": null,
+        "openrouter": null
+      }
+    }
+  ],
+  "privacy": {
+    "aggregate_only": true,
+    "identifiers": false,
+    "content": false,
+    "credentials": false
+  }
+}
