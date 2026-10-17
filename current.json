@@ -1,0 +1,611 @@
+{
+  "schema": "tokenmaxxing-public/v1",
+  "updated_at": "2026-10-17T16:28:45.218057Z",
+  "window": {
+    "start": "2026-10-16T23:00:00Z",
+    "end": "2026-10-17T16:28:45.143422Z",
+    "label": "2026-10-16 23:00 to 2026-10-17 16:28 UTC"
+  },
+  "health": {
+    "collector_up": null,
+    "metrics_up": null,
+    "received_spans_1h": null,
+    "metric_points_exported_1h": null,
+    "failed_exports_1h": null,
+    "active_work": null,
+    "alerts": 0,
+    "alerts_by_severity": {},
+    "alerts_detail": [],
+    "alerts_note": "Counts firing Prometheus rules plus the control-plane exporter's own alert series. Severity is the worst reported.",
+    "alerts_worst_severity": null,
+    "pipeline_note": "Spans are received once and converted locally into Prometheus metrics; no trace backend is shipped to, so there is no export queue to report."
+  },
+  "usage": {
+    "known_total": null,
+    "providers": [
+      {
+        "id": "chatgpt-codex",
+        "label": "Codex",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "opencode-go",
+        "label": "OpenCode Go",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter",
+        "tokens": null,
+        "share": null,
+        "source": null
+      },
+      {
+        "id": "other",
+        "label": "Other measured",
+        "tokens": null,
+        "share": null,
+        "source": null
+      }
+    ]
+  },
+  "activity": {
+    "active": null,
+    "complete": null,
+    "attention": null
+  },
+  "activity_rate": {},
+  "economics": {
+    "retained_total": null,
+    "spend_24h": null,
+    "cash_total_usd": null,
+    "cash_by_agent": {},
+    "cash_basis": "metered",
+    "notional_total_usd": null,
+    "notional_by_agent": {},
+    "metered_by_authority": {},
+    "cost_total_usd": null,
+    "cost_by_basis": {
+      "metered": null,
+      "notional": null,
+      "unknown": null
+    },
+    "cost_by_authority": [],
+    "cost_authority_labels": {
+      "codex-plan": "Codex plan (included in subscription)",
+      "openrouter": "OpenRouter (prepaid credits)",
+      "opencode-go": "OpenCode Go (usage-billed)",
+      "openai-api": "OpenAI API (pay-per-token)",
+      "unknown": "Unknown who bills"
+    },
+    "openrouter_account": {
+      "scope": "account",
+      "authority": "openrouter_credits_api",
+      "credits_total_usd": null,
+      "credits_used_usd": null,
+      "credits_balance_usd": null,
+      "key_lifetime_usd": null,
+      "key_monthly_usd": null,
+      "attributed_session_usd": null,
+      "unattributed_usd": null,
+      "note": "Account, key and session attribution are different scopes and are never summed. The unattributed gap is routed traffic that recorded no native cost in its session store."
+    },
+    "allowance": {},
+    "runway": null,
+    "allowance_note": "Codex-emitted allowance and reset data is measured. Exact credit balance is withheld from the public packet; balance increases are not labelled as automatic refills.",
+    "cost_basis_note": "cash_total_usd is metered money only. notional_total_usd is subscription-included usage valued at list prices and is not cash. cost_total_usd is the sum of every measured basis and equals the Grafana retained total; the three bases always add up to it.",
+    "cost_authority_note": "Every measured dollar is attributed to a named bill. cost_by_authority rows sum to cost_total_usd."
+  },
+  "cache_efficiency": {},
+  "source_harness": [],
+  "attribution": {
+    "labelled_tokens": null,
+    "all_tokens": null,
+    "share": null,
+    "window_age_seconds": null,
+    "parent_worker_edges": null
+  },
+  "latency_reliability": {
+    "ttft_p95_ms": null,
+    "request_failure_rate_5m": null
+  },
+  "session_usage": {
+    "agents": [],
+    "models_24h": [],
+    "projects_24h": [],
+    "unknown_model_tokens_24h": null
+  },
+  "retained_totals": {
+    "providers": [],
+    "known_total": null
+  },
+  "token_scopes": {
+    "headline_scope": "provider_retained",
+    "scopes": [
+      {
+        "id": "provider_retained",
+        "label": "Provider-recorded lifetime tokens",
+        "tokens": null,
+        "source": "Codex thread records and the OpenCode session table",
+        "basis": "One cumulative figure per session, as kept by the client that ran it."
+      },
+      {
+        "id": "session_measured",
+        "label": "Harness-measured tokens",
+        "tokens": null,
+        "source": "Local session event streams, parsed per harness",
+        "basis": "Prompt plus completion only, attributed to the harness that ran the work."
+      }
+    ],
+    "note": "These are two different measurements, not two answers to one question, so they are not expected to be equal. The provider record is the headline because it is the only figure that covers sessions whose local event files are no longer present. The harness figure is narrower: it only sees events still on disk, and it splits prompt from completion. Read the headline for lifetime scale and the harness breakdown for who ran the work."
+  },
+  "coverage": {
+    "provider_rows": 4,
+    "provider_rows_known": 2,
+    "sources_available": {},
+    "window_age_seconds": null,
+    "quota_source_age_seconds": null
+  },
+  "history": [
+    {
+      "at": "2026-10-13T20:00:00Z",
+      "chatgpt_codex": 191431189,
+      "opencode_go": 0,
+      "known_total": 191431189
+    },
+    {
+      "at": "2026-10-13T21:00:00Z",
+      "codex_activity": 14.894475860357806,
+      "chatgpt_codex": 18404995061.0,
+      "opencode_go": 1587876312.0,
+      "known_total": 40470081654.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-13T22:00:00Z",
+      "codex_activity": 1.4368986690170573,
+      "chatgpt_codex": 18421986256.0,
+      "opencode_go": 1587876312.0,
+      "known_total": 40487072849.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-13T23:00:00Z",
+      "codex_activity": 15.448949204773582,
+      "chatgpt_codex": 18461772576.0,
+      "opencode_go": 1587876312.0,
+      "known_total": 40526859169.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-14T00:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T03:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T05:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T07:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T09:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T10:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T11:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T12:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T13:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T14:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T15:00:00Z",
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0,
+      "known_total": 38187116
+    },
+    {
+      "at": "2026-10-14T16:00:00Z",
+      "chatgpt_codex": 54848397,
+      "opencode_go": 0,
+      "known_total": 54848397
+    },
+    {
+      "at": "2026-10-14T17:00:00Z",
+      "chatgpt_codex": 58781106,
+      "opencode_go": 0,
+      "known_total": 58781106
+    },
+    {
+      "at": "2026-10-14T18:00:00Z",
+      "chatgpt_codex": 81052679,
+      "opencode_go": 0,
+      "known_total": 81052679
+    },
+    {
+      "at": "2026-10-14T19:00:00Z",
+      "chatgpt_codex": 101772216,
+      "opencode_go": 0,
+      "known_total": 101772216
+    },
+    {
+      "at": "2026-10-14T20:00:00Z",
+      "chatgpt_codex": 170157336,
+      "opencode_go": 0,
+      "known_total": 170157336
+    },
+    {
+      "at": "2026-10-14T21:00:00Z",
+      "chatgpt_codex": 233234461,
+      "opencode_go": 0,
+      "known_total": 233234461
+    },
+    {
+      "at": "2026-10-14T22:00:00Z",
+      "chatgpt_codex": 233936801,
+      "opencode_go": 0,
+      "known_total": 233936801
+    },
+    {
+      "at": "2026-10-14T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T15:00:00Z",
+      "chatgpt_codex": 561987,
+      "opencode_go": 0,
+      "known_total": 561987
+    },
+    {
+      "at": "2026-10-15T16:00:00Z",
+      "chatgpt_codex": 561987,
+      "opencode_go": 0,
+      "known_total": 561987
+    },
+    {
+      "at": "2026-10-15T18:00:00Z",
+      "chatgpt_codex": 561987,
+      "opencode_go": 0,
+      "known_total": 561987
+    },
+    {
+      "at": "2026-10-15T19:00:00Z",
+      "chatgpt_codex": 561987,
+      "opencode_go": 0,
+      "known_total": 561987
+    },
+    {
+      "at": "2026-10-15T20:00:00Z",
+      "chatgpt_codex": 1193416,
+      "opencode_go": 0,
+      "known_total": 1193416
+    },
+    {
+      "at": "2026-10-15T21:00:00Z",
+      "chatgpt_codex": 27950036,
+      "opencode_go": 0,
+      "known_total": 27950036
+    },
+    {
+      "at": "2026-10-15T22:00:00Z",
+      "chatgpt_codex": 63154828,
+      "opencode_go": 0,
+      "known_total": 63154828
+    },
+    {
+      "at": "2026-10-15T23:00:00Z",
+      "chatgpt_codex": 17290923,
+      "opencode_go": 0,
+      "known_total": 17290923
+    },
+    {
+      "at": "2026-10-16T00:00:00Z",
+      "chatgpt_codex": 18573225,
+      "opencode_go": 0,
+      "known_total": 18573225
+    },
+    {
+      "at": "2026-10-16T01:00:00Z",
+      "chatgpt_codex": 20517654,
+      "opencode_go": 0,
+      "known_total": 20517654
+    },
+    {
+      "at": "2026-10-16T02:00:00Z",
+      "chatgpt_codex": 21816908,
+      "opencode_go": 0,
+      "known_total": 21816908
+    },
+    {
+      "at": "2026-10-16T03:00:00Z",
+      "chatgpt_codex": 23116162,
+      "opencode_go": 0,
+      "known_total": 23116162
+    },
+    {
+      "at": "2026-10-16T05:00:00Z",
+      "chatgpt_codex": 23765789,
+      "opencode_go": 0,
+      "known_total": 23765789
+    },
+    {
+      "at": "2026-10-16T06:00:00Z",
+      "chatgpt_codex": 24415416,
+      "opencode_go": 0,
+      "known_total": 24415416
+    },
+    {
+      "at": "2026-10-16T08:00:00Z",
+      "chatgpt_codex": 33577186,
+      "opencode_go": 0,
+      "known_total": 33577186
+    },
+    {
+      "at": "2026-10-16T09:00:00Z",
+      "chatgpt_codex": 62556251,
+      "opencode_go": 0,
+      "known_total": 62556251
+    },
+    {
+      "at": "2026-10-16T10:00:00Z",
+      "chatgpt_codex": 70536117,
+      "opencode_go": 0,
+      "known_total": 70536117
+    },
+    {
+      "at": "2026-10-16T11:00:00Z",
+      "chatgpt_codex": 122707349,
+      "opencode_go": 0,
+      "known_total": 122707349
+    },
+    {
+      "at": "2026-10-16T12:00:00Z",
+      "chatgpt_codex": 156161732,
+      "opencode_go": 0,
+      "known_total": 156161732
+    },
+    {
+      "at": "2026-10-16T13:00:00Z",
+      "chatgpt_codex": 161695530,
+      "opencode_go": 0,
+      "known_total": 161695530
+    },
+    {
+      "at": "2026-10-16T18:00:00Z",
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0,
+      "known_total": 162005372
+    },
+    {
+      "at": "2026-10-16T19:00:00Z",
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0,
+      "known_total": 162005372
+    },
+    {
+      "at": "2026-10-16T20:00:00Z",
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0,
+      "known_total": 162005372
+    },
+    {
+      "at": "2026-10-16T21:00:00Z",
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0,
+      "known_total": 162005372
+    },
+    {
+      "at": "2026-10-16T22:00:00Z",
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0,
+      "known_total": 162005372
+    },
+    {
+      "at": "2026-10-16T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T16:00:00Z",
+      "known_total": null,
+      "codex_activity": null,
+      "opencode_activity": null,
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "openrouter": null,
+      "other": null,
+      "agents": {},
+      "retained": {}
+    }
+  ],
+  "privacy": {
+    "aggregate_only": true,
+    "identifiers": false,
+    "content": false,
+    "credentials": false
+  }
+}
