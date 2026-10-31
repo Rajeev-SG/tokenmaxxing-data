@@ -1,0 +1,2352 @@
+{
+  "schema": "tokenmaxxing-public/v1",
+  "updated_at": "2026-10-31T12:07:21.780264Z",
+  "window": {
+    "start": "2026-10-31T00:00:00Z",
+    "end": "2026-10-31T12:07:21.695624Z",
+    "label": "2026-10-31 00:00 to 2026-10-31 12:07 UTC"
+  },
+  "health": {
+    "collector_up": null,
+    "metrics_up": null,
+    "received_spans_1h": null,
+    "metric_points_exported_1h": null,
+    "failed_exports_1h": null,
+    "active_work": null,
+    "alerts": 0,
+    "alerts_by_severity": {},
+    "alerts_detail": [],
+    "alerts_note": "Counts firing Prometheus rules plus the control-plane exporter's own alert series. Severity is the worst reported.",
+    "alerts_worst_severity": null,
+    "pipeline_note": "Spans are received once and converted locally into Prometheus metrics; no trace backend is shipped to, so there is no export queue to report."
+  },
+  "usage": {
+    "known_total": null,
+    "providers": [
+      {
+        "id": "chatgpt-codex",
+        "label": "Codex",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "opencode-go",
+        "label": "OpenCode Go",
+        "tokens": 0,
+        "share": null,
+        "source": "operator_readout"
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter",
+        "tokens": null,
+        "share": null,
+        "source": null
+      },
+      {
+        "id": "other",
+        "label": "Other measured",
+        "tokens": null,
+        "share": null,
+        "source": null
+      }
+    ]
+  },
+  "activity": {
+    "active": null,
+    "complete": null,
+    "attention": null
+  },
+  "activity_rate": {},
+  "economics": {
+    "retained_total": null,
+    "spend_24h": null,
+    "cash_total_usd": null,
+    "cash_by_agent": {},
+    "cash_basis": "metered",
+    "notional_total_usd": null,
+    "notional_by_agent": {},
+    "metered_by_authority": {},
+    "cost_total_usd": null,
+    "cost_by_basis": {
+      "metered": null,
+      "notional": null,
+      "unknown": null
+    },
+    "cost_by_authority": [],
+    "cost_authority_labels": {
+      "codex-plan": "Codex plan (included in subscription)",
+      "openrouter": "OpenRouter (prepaid credits)",
+      "opencode-go": "OpenCode Go (usage-billed)",
+      "openai-api": "OpenAI API (pay-per-token)",
+      "unknown": "Unknown who bills"
+    },
+    "openrouter_account": {
+      "scope": "account",
+      "authority": "openrouter_credits_api",
+      "credits_total_usd": null,
+      "credits_used_usd": null,
+      "credits_balance_usd": null,
+      "key_lifetime_usd": null,
+      "key_monthly_usd": null,
+      "attributed_session_usd": null,
+      "unattributed_usd": null,
+      "note": "Account, key and session attribution are different scopes and are never summed. The unattributed gap is routed traffic that recorded no native cost in its session store."
+    },
+    "allowance": {},
+    "runway": null,
+    "allowance_note": "Codex-emitted allowance and reset data is measured. Exact credit balance is withheld from the public packet; balance increases are not labelled as automatic refills.",
+    "cost_basis_note": "cash_total_usd is metered money only. notional_total_usd is subscription-included usage valued at list prices and is not cash. cost_total_usd is the sum of every measured basis and equals the Grafana retained total; the three bases always add up to it.",
+    "cost_authority_note": "Every measured dollar is attributed to a named bill. cost_by_authority rows sum to cost_total_usd."
+  },
+  "cache_efficiency": {},
+  "source_harness": [],
+  "attribution": {
+    "labelled_tokens": null,
+    "all_tokens": null,
+    "share": null,
+    "window_age_seconds": null,
+    "parent_worker_edges": null
+  },
+  "latency_reliability": {
+    "ttft_p95_ms": null,
+    "request_failure_rate_5m": null
+  },
+  "session_usage": {
+    "agents": [],
+    "models_24h": [],
+    "projects_24h": [],
+    "unknown_model_tokens_24h": null
+  },
+  "retained_totals": {
+    "providers": [],
+    "known_total": null
+  },
+  "token_scopes": {
+    "headline_scope": "provider_retained",
+    "scopes": [
+      {
+        "id": "provider_retained",
+        "label": "Provider-recorded lifetime tokens",
+        "tokens": null,
+        "source": "Codex thread records and the OpenCode session table",
+        "basis": "One cumulative figure per session, as kept by the client that ran it."
+      },
+      {
+        "id": "session_measured",
+        "label": "Harness-measured tokens",
+        "tokens": null,
+        "source": "Local session event streams, parsed per harness",
+        "basis": "Prompt plus completion only, attributed to the harness that ran the work."
+      }
+    ],
+    "note": "These are two different measurements, not two answers to one question, so they are not expected to be equal. The provider record is the headline because it is the only figure that covers sessions whose local event files are no longer present. The harness figure is narrower: it only sees events still on disk, and it splits prompt from completion. Read the headline for lifetime scale and the harness breakdown for who ran the work."
+  },
+  "coverage": {
+    "provider_rows": 4,
+    "provider_rows_known": 2,
+    "sources_available": {},
+    "window_age_seconds": null,
+    "quota_source_age_seconds": null
+  },
+  "history": [
+    {
+      "at": "2026-10-13T20:00:00Z",
+      "known_total": 191431189,
+      "chatgpt_codex": 191431189,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-13T21:00:00Z",
+      "known_total": 40470081654.0,
+      "codex_activity": 14.894475860357806,
+      "chatgpt_codex": 18404995061.0,
+      "opencode_go": 1587876312.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-13T22:00:00Z",
+      "known_total": 40487072849.0,
+      "codex_activity": 1.4368986690170573,
+      "chatgpt_codex": 18421986256.0,
+      "opencode_go": 1587876312.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-13T23:00:00Z",
+      "known_total": 40526859169.0,
+      "codex_activity": 15.448949204773582,
+      "chatgpt_codex": 18461772576.0,
+      "opencode_go": 1587876312.0,
+      "openrouter": 20477210281.0
+    },
+    {
+      "at": "2026-10-14T00:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T03:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T05:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T07:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T09:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T10:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T11:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T12:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T13:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T14:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T15:00:00Z",
+      "known_total": 38187116,
+      "chatgpt_codex": 38187116,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T16:00:00Z",
+      "known_total": 54848397,
+      "chatgpt_codex": 54848397,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T17:00:00Z",
+      "known_total": 58781106,
+      "chatgpt_codex": 58781106,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T18:00:00Z",
+      "known_total": 81052679,
+      "chatgpt_codex": 81052679,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T19:00:00Z",
+      "known_total": 101772216,
+      "chatgpt_codex": 101772216,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T20:00:00Z",
+      "known_total": 170157336,
+      "chatgpt_codex": 170157336,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T21:00:00Z",
+      "known_total": 233234461,
+      "chatgpt_codex": 233234461,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T22:00:00Z",
+      "known_total": 233936801,
+      "chatgpt_codex": 233936801,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-14T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T15:00:00Z",
+      "known_total": 561987,
+      "chatgpt_codex": 561987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T16:00:00Z",
+      "known_total": 561987,
+      "chatgpt_codex": 561987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T18:00:00Z",
+      "known_total": 561987,
+      "chatgpt_codex": 561987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T19:00:00Z",
+      "known_total": 561987,
+      "chatgpt_codex": 561987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T20:00:00Z",
+      "known_total": 1193416,
+      "chatgpt_codex": 1193416,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T21:00:00Z",
+      "known_total": 27950036,
+      "chatgpt_codex": 27950036,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T22:00:00Z",
+      "known_total": 63154828,
+      "chatgpt_codex": 63154828,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-15T23:00:00Z",
+      "known_total": 17290923,
+      "chatgpt_codex": 17290923,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T00:00:00Z",
+      "known_total": 18573225,
+      "chatgpt_codex": 18573225,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T01:00:00Z",
+      "known_total": 20517654,
+      "chatgpt_codex": 20517654,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T02:00:00Z",
+      "known_total": 21816908,
+      "chatgpt_codex": 21816908,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T03:00:00Z",
+      "known_total": 23116162,
+      "chatgpt_codex": 23116162,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T05:00:00Z",
+      "known_total": 23765789,
+      "chatgpt_codex": 23765789,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T06:00:00Z",
+      "known_total": 24415416,
+      "chatgpt_codex": 24415416,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T08:00:00Z",
+      "known_total": 33577186,
+      "chatgpt_codex": 33577186,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T09:00:00Z",
+      "known_total": 62556251,
+      "chatgpt_codex": 62556251,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T10:00:00Z",
+      "known_total": 70536117,
+      "chatgpt_codex": 70536117,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T11:00:00Z",
+      "known_total": 122707349,
+      "chatgpt_codex": 122707349,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T12:00:00Z",
+      "known_total": 156161732,
+      "chatgpt_codex": 156161732,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T13:00:00Z",
+      "known_total": 161695530,
+      "chatgpt_codex": 161695530,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T18:00:00Z",
+      "known_total": 162005372,
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T19:00:00Z",
+      "known_total": 162005372,
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T20:00:00Z",
+      "known_total": 162005372,
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T21:00:00Z",
+      "known_total": 162005372,
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T22:00:00Z",
+      "known_total": 162005372,
+      "chatgpt_codex": 162005372,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-16T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-17T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T15:00:00Z",
+      "known_total": 10450060,
+      "chatgpt_codex": 10450060,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T16:00:00Z",
+      "known_total": 53251851,
+      "chatgpt_codex": 53251851,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T17:00:00Z",
+      "known_total": 77422159,
+      "chatgpt_codex": 77422159,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T18:00:00Z",
+      "known_total": 140317503,
+      "chatgpt_codex": 140317503,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T19:00:00Z",
+      "known_total": 192076120,
+      "chatgpt_codex": 192076120,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T20:00:00Z",
+      "known_total": 236123886,
+      "chatgpt_codex": 236123886,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T21:00:00Z",
+      "known_total": 312442172,
+      "chatgpt_codex": 312442172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T22:00:00Z",
+      "known_total": 361673533,
+      "chatgpt_codex": 361673533,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-18T23:00:00Z",
+      "known_total": 23960595,
+      "chatgpt_codex": 23960595,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T00:00:00Z",
+      "known_total": 53190796,
+      "chatgpt_codex": 53190796,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T01:00:00Z",
+      "known_total": 99969390,
+      "chatgpt_codex": 99969390,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T02:00:00Z",
+      "known_total": 166702731,
+      "chatgpt_codex": 166702731,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T03:00:00Z",
+      "known_total": 236428758,
+      "chatgpt_codex": 236428758,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T04:00:00Z",
+      "known_total": 236428758,
+      "chatgpt_codex": 236428758,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T05:00:00Z",
+      "known_total": 236428758,
+      "chatgpt_codex": 236428758,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T06:00:00Z",
+      "known_total": 236428758,
+      "chatgpt_codex": 236428758,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T07:00:00Z",
+      "known_total": 236428758,
+      "chatgpt_codex": 236428758,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T08:00:00Z",
+      "known_total": 252414571,
+      "chatgpt_codex": 252414571,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T09:00:00Z",
+      "known_total": 294477993,
+      "chatgpt_codex": 294477993,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T10:00:00Z",
+      "known_total": 334586597,
+      "chatgpt_codex": 334586597,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T11:00:00Z",
+      "known_total": 383902672,
+      "chatgpt_codex": 383902672,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T12:00:00Z",
+      "known_total": 439566894,
+      "chatgpt_codex": 439566894,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T13:00:00Z",
+      "known_total": 484801477,
+      "chatgpt_codex": 484801477,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T14:00:00Z",
+      "known_total": 564186843,
+      "chatgpt_codex": 564186843,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T15:00:00Z",
+      "known_total": 626464315,
+      "chatgpt_codex": 626464315,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T16:00:00Z",
+      "known_total": 639651118,
+      "chatgpt_codex": 639651118,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T17:00:00Z",
+      "known_total": 663624353,
+      "chatgpt_codex": 663624353,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T18:00:00Z",
+      "known_total": 675891632,
+      "chatgpt_codex": 675891632,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T19:00:00Z",
+      "known_total": 705568633,
+      "chatgpt_codex": 705568633,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T20:00:00Z",
+      "known_total": 754648660,
+      "chatgpt_codex": 754648660,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T21:00:00Z",
+      "known_total": 785880714,
+      "chatgpt_codex": 785880714,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T22:00:00Z",
+      "known_total": 801058992,
+      "chatgpt_codex": 801058992,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-19T23:00:00Z",
+      "known_total": 27207795,
+      "chatgpt_codex": 27207795,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T00:00:00Z",
+      "known_total": 70499969,
+      "chatgpt_codex": 70499969,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T01:00:00Z",
+      "known_total": 119752106,
+      "chatgpt_codex": 119752106,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T02:00:00Z",
+      "known_total": 153947087,
+      "chatgpt_codex": 153947087,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T03:00:00Z",
+      "known_total": 192859736,
+      "chatgpt_codex": 192859736,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T04:00:00Z",
+      "known_total": 192859736,
+      "chatgpt_codex": 192859736,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T05:00:00Z",
+      "known_total": 192859736,
+      "chatgpt_codex": 192859736,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T06:00:00Z",
+      "known_total": 192859736,
+      "chatgpt_codex": 192859736,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T07:00:00Z",
+      "known_total": 192859736,
+      "chatgpt_codex": 192859736,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T08:00:00Z",
+      "known_total": 197431679,
+      "chatgpt_codex": 197431679,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T09:00:00Z",
+      "known_total": 242418338,
+      "chatgpt_codex": 242418338,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T10:00:00Z",
+      "known_total": 262170866,
+      "chatgpt_codex": 262170866,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T11:00:00Z",
+      "known_total": 284545987,
+      "chatgpt_codex": 284545987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T12:00:00Z",
+      "known_total": 324540506,
+      "chatgpt_codex": 324540506,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T13:00:00Z",
+      "known_total": 375059453,
+      "chatgpt_codex": 375059453,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T14:00:00Z",
+      "known_total": 408362729,
+      "chatgpt_codex": 408362729,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T15:00:00Z",
+      "known_total": 455562034,
+      "chatgpt_codex": 455562034,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T16:00:00Z",
+      "known_total": 482177172,
+      "chatgpt_codex": 482177172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T18:00:00Z",
+      "known_total": 482177172,
+      "chatgpt_codex": 482177172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T20:00:00Z",
+      "known_total": 482177172,
+      "chatgpt_codex": 482177172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T21:00:00Z",
+      "known_total": 482177172,
+      "chatgpt_codex": 482177172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T22:00:00Z",
+      "known_total": 482177172,
+      "chatgpt_codex": 482177172,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-20T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T08:00:00Z",
+      "known_total": 2744831,
+      "chatgpt_codex": 2744831,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T09:00:00Z",
+      "known_total": 2744831,
+      "chatgpt_codex": 2744831,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T10:00:00Z",
+      "known_total": 2744831,
+      "chatgpt_codex": 2744831,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T11:00:00Z",
+      "known_total": 2744831,
+      "chatgpt_codex": 2744831,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T12:00:00Z",
+      "known_total": 7210055,
+      "chatgpt_codex": 7210055,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T13:00:00Z",
+      "known_total": 7210055,
+      "chatgpt_codex": 7210055,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T14:00:00Z",
+      "known_total": 18880566,
+      "chatgpt_codex": 18880566,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T15:00:00Z",
+      "known_total": 28115910,
+      "chatgpt_codex": 28115910,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T16:00:00Z",
+      "known_total": 39076465,
+      "chatgpt_codex": 39076465,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T17:00:00Z",
+      "known_total": 65842204,
+      "chatgpt_codex": 65842204,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T18:00:00Z",
+      "known_total": 102792126,
+      "chatgpt_codex": 102792126,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T19:00:00Z",
+      "known_total": 157266072,
+      "chatgpt_codex": 157266072,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T20:00:00Z",
+      "known_total": 162497689,
+      "chatgpt_codex": 162497689,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T21:00:00Z",
+      "known_total": 179423705,
+      "chatgpt_codex": 179423705,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T22:00:00Z",
+      "known_total": 182009752,
+      "chatgpt_codex": 182009752,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-21T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T09:00:00Z",
+      "known_total": 23877904,
+      "chatgpt_codex": 23877904,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T10:00:00Z",
+      "known_total": 53506829,
+      "chatgpt_codex": 53506829,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T11:00:00Z",
+      "known_total": 75831850,
+      "chatgpt_codex": 75831850,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T12:00:00Z",
+      "known_total": 75831850,
+      "chatgpt_codex": 75831850,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T13:00:00Z",
+      "known_total": 82890571,
+      "chatgpt_codex": 82890571,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T14:00:00Z",
+      "known_total": 104133916,
+      "chatgpt_codex": 104133916,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T15:00:00Z",
+      "known_total": 109767188,
+      "chatgpt_codex": 109767188,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T16:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T17:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T18:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T20:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T21:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T22:00:00Z",
+      "known_total": 112337482,
+      "chatgpt_codex": 112337482,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-22T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T12:00:00Z",
+      "known_total": 13664987,
+      "chatgpt_codex": 13664987,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T13:00:00Z",
+      "known_total": 28121184,
+      "chatgpt_codex": 28121184,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T14:00:00Z",
+      "known_total": 41052686,
+      "chatgpt_codex": 41052686,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T15:00:00Z",
+      "known_total": 50292196,
+      "chatgpt_codex": 50292196,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T16:00:00Z",
+      "known_total": 51176591,
+      "chatgpt_codex": 51176591,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T17:00:00Z",
+      "known_total": 71404686,
+      "chatgpt_codex": 71404686,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T18:00:00Z",
+      "known_total": 83443856,
+      "chatgpt_codex": 83443856,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T19:00:00Z",
+      "known_total": 83443856,
+      "chatgpt_codex": 83443856,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T20:00:00Z",
+      "known_total": 83443856,
+      "chatgpt_codex": 83443856,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T21:00:00Z",
+      "known_total": 83443856,
+      "chatgpt_codex": 83443856,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T22:00:00Z",
+      "known_total": 83443856,
+      "chatgpt_codex": 83443856,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-23T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T15:00:00Z",
+      "known_total": 14921367,
+      "chatgpt_codex": 14921367,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T16:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T17:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T18:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T19:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T20:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T21:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T22:00:00Z",
+      "known_total": 30827575,
+      "chatgpt_codex": 30827575,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-24T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-25T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-26T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-27T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-28T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-29T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T12:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T13:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T14:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T15:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T16:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T17:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T18:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T19:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T20:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T21:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T22:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-30T23:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T00:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T01:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T02:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T03:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T04:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T05:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T06:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T07:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T08:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T09:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T10:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T11:00:00Z",
+      "chatgpt_codex": 0,
+      "opencode_go": 0
+    },
+    {
+      "at": "2026-10-31T12:00:00Z",
+      "known_total": null,
+      "codex_activity": null,
+      "opencode_activity": null,
+      "chatgpt_codex": 0,
+      "opencode_go": 0,
+      "openrouter": null,
+      "other": null,
+      "agents": {},
+      "retained": {}
+    }
+  ],
+  "privacy": {
+    "aggregate_only": true,
+    "identifiers": false,
+    "content": false,
+    "credentials": false
+  }
+}
